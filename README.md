@@ -21,8 +21,8 @@ Partition Label: myUsbData
 - This automation will **NOT** create a new storage in PVE. For this you have to go in the pve gui:
   - Datacenter->Storage->Add->Directory
   - Specify any ID you want (I usually specify the partition label here but it doesn't matter)
-  - Directory: the automatically created mountpoint, e.g. /mnt/auto/myUsbData
-  - Content: choose also VZDUmp if you want to save backups on it.
+  - Directory: the automatically created mountpoint, e.g. /mnt/auto/myUsbData[/optionalSubfolder]  I suggest you create a special folder on your storage (f.i. "pve")  for proxmox related data
+  - Content: choose also VZDump if you want to save pve backups on it.
 - The main mount script (mount_usb_memory.sh) was inspired from [this article](https://andreafortuna.org/2019/06/26/automount-usb-devices-on-linux-using-udev-and-systemd/)
 
 # Install
