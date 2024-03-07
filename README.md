@@ -1,4 +1,4 @@
-# Auto-Mount Memories on Proxmox(8) or any Debian(12) based system
+# Auto-Mount Memories on Proxmox (8) or any Debian (12) based system
 This is a set of auto-mount script & rules tested on Proxmox 8. It will  mount every partition (ext4/ntfs/fat) found on dynamically/usb attached memories (sticks, external HDDs, sd-cards...) to /mnt/auto/....
 
 ## Why?
