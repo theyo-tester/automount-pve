@@ -56,7 +56,7 @@ do_unmount()
         /usr/bin/umount -l ${DEVICE}
     fi
 
-    # Delete all empty dirs in /media that aren't being used as mount points. 
+    # Delete all empty dirs in MOUNT_PARENT_PATH that aren't being used as mount points. 
     for f in ${MOUNT_PARENT_PATH}/* ; do
         if [[ -n $(/usr/bin/find "$f" -maxdepth 0 -type d -empty) ]]; then
             if ! /usr/bin/grep -q " $f " $MOUNT_INFO; then
