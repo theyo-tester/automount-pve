@@ -23,6 +23,7 @@ Partition Label: myUsbData
   - Specify any ID you want (I usually specify the partition label here but it doesn't matter)
   - Directory: the automatically created mountpoint, e.g. /mnt/auto/myUsbData
   - Content: choose also VZDUmp if you want to save backups on it.
+- The main mount script (mount_usb_memory.sh) was inspired from [this article](https://andreafortuna.org/2019/06/26/automount-usb-devices-on-linux-using-udev-and-systemd/)
 
 # Install
 - Clone this repo to your machine. Go inside the folder.
