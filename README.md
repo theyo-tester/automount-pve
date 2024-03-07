@@ -26,5 +26,5 @@ Partition Label: myUsbData
 
 # Install
 - Clone this repo to your machine. Go inside the folder.
-- run ./installAutoMount.sh
+- run ./installAutoMount.sh   This will copy the needed files to the right folders and reload systemd.
 - Test: Plug in a usb memory and check the /mnt/auto folder for further subdirectories. /mnt/auto will be automatically created as soon some partition can be mounted there.
