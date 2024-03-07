@@ -48,8 +48,6 @@ do_mount()
         exit 1
     fi
     logger "${ScriptName}: ${DEVICE} - Mount done! Exit"
-    # Bonus track: send desktop notification to user
-#    sudo -u andrea DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send "Device ${DEVICE} mounted at ${MOUNT_POINT}"
 }
 
 do_unmount()
