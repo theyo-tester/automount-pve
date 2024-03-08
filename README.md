@@ -7,7 +7,7 @@ This is a set of auto-mount script & rules tested on Proxmox 8. It will  mount e
 - I found no final solution for this task (especially for pve 8 on debian 12). Other found solutions are not mantained anymore. I did not even tried them because they were made for pve7
 - That's why I wrote my own solution after some try and fails.
 # Install
-- Clone this repo to your machine. Go inside the folder.
+- Clone/Download this repo to your machine. Go inside the folder.
 - run `./installAutoMount.sh`   This will copy the needed files to the right folders and reload systemd.
 - Test: Plug in a usb memory and check the /mnt/auto folder for further subdirectories. /mnt/auto will be automatically, created as soon some partition can be mounted there.
 
