@@ -31,4 +31,6 @@ Partition Label: myUsbData
   - Content: choose also **VZDump** if you want to save pve **backups** on it.
 - The main mount script (mount_usb_memory.sh) was inspired from [this article](https://andreafortuna.org/2019/06/26/automount-usb-devices-on-linux-using-udev-and-systemd/)
 
+## Do To
+- At instalation, offer option to install the ntfs-3g package, if not found.
 
