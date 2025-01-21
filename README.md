@@ -34,4 +34,9 @@ Partition Label: myUsbData
 
 ## To Do
 - At instalation, offer option to install the ntfs-3g package, if not found.
+- At instalation, offer the option to auto-add and enable the storage in pve (thus removing the need to manually create the storage in pve)
+
+## Contribution
+- If you have encountered any issues or have suggestions, open an issue.
+- Feel free to create pull requests with improvements, features or acomplishing of any ToDos mentioned here.
 
