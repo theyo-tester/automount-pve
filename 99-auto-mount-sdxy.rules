@@ -1,2 +1,13 @@
-KERNEL=="sd[a-z][0-9]", SUBSYSTEMS=="usb", ACTION=="add", RUN+="/bin/systemctl start usb-mount@%k.service"
-KERNEL=="sd[a-z][0-9]", SUBSYSTEMS=="usb", ACTION=="remove", RUN+="/bin/systemctl stop usb-mount@%k.service"
+# USB-attached SCSI/SATA devices (partitions only)
+KERNEL=="sd[a-z][0-9]*", SUBSYSTEMS=="usb", ACTION=="add", RUN+="/bin/systemctl start usb-mount@%k.service"
+KERNEL=="sd[a-z][0-9]*", SUBSYSTEMS=="usb", ACTION=="remove", RUN+="/bin/systemctl stop usb-mount@%k.service"
+
+# USB-attached NVMe enclosures (partitions only)
+# Match nvmeXnYpZ where Z is the partition number.
+# Two rule sets for maximum compatibility — some enclosures expose ID_BUS=usb,
+# others expose removable=1 via the USB subsystem.  Both require SUBSYSTEMS=="usb"
+# to guarantee internal NVMe drives are never touched.
+KERNEL=="nvme[0-9]*n[0-9]*p[0-9]*", ENV{ID_BUS}=="usb", ACTION=="add", RUN+="/bin/systemctl start usb-mount@%k.service"
+KERNEL=="nvme[0-9]*n[0-9]*p[0-9]*", ENV{ID_BUS}=="usb", ACTION=="remove", RUN+="/bin/systemctl stop usb-mount@%k.service"
+KERNEL=="nvme[0-9]*n[0-9]*p[0-9]*", ATTR{removable}=="1", SUBSYSTEMS=="usb", ACTION=="add", RUN+="/bin/systemctl start usb-mount@%k.service"
+KERNEL=="nvme[0-9]*n[0-9]*p[0-9]*", ATTR{removable}=="1", SUBSYSTEMS=="usb", ACTION=="remove", RUN+="/bin/systemctl stop usb-mount@%k.service"

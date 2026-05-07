@@ -1,0 +1,17 @@
+[Unit]
+Description=Ensure /mnt has shared mount propagation for LXC visibility
+DefaultDependencies=no
+After=local-fs.target
+Before=lxc.service pve-guests.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+# mount --make-rshared requires the target to be a mount point.
+# On a stock Debian/Proxmox install /mnt is a plain directory, so bind-mount
+# it to itself first; the -q check makes this idempotent on re-runs.
+ExecStartPre=/bin/sh -c 'mountpoint -q /mnt || mount --bind /mnt /mnt'
+ExecStart=/bin/mount --make-rshared /mnt
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,22 @@
+{
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format",
+        "editor.formatOnSave": true
+    },
+    "shellcheck.enable": true,
+    "shellcheck.run": "onSave",
+    "shellcheck.severity": "warning",
+    "bashIde.explainshellEndpoint": "https://explainshell.com",
+    "editor.rulers": [
+        100
+    ],
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "markdownlint.config": {
+        "MD013": false,
+        "MD033": false
+    }
+}

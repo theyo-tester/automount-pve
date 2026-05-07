@@ -4,5 +4,8 @@ Description=Mount USB Drive on %i
 [Service]
 Type=oneshot
 RemainAfterExit=true
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=usb-mount@%i
 ExecStart=/etc/mount_usb_memory.sh add %i
 ExecStop=/etc/mount_usb_memory.sh remove %i

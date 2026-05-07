@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run ShellCheck",
+      "type": "shell",
+      "command": "shellcheck **/*.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Bash Syntax Check",
+      "type": "shell",
+      "command": "bash -n **/*.sh",
+      "problemMatcher": []
+    }
+  ]
+}

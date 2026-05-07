@@ -1,0 +1,24 @@
+name: Lint & Validate
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install ShellCheck
+        run: sudo apt-get install -y shellcheck
+
+      - name: Run ShellCheck
+        run: shellcheck $(find . -type f -name "*.sh")
+
+      - name: Bash Syntax Check
+        run: |
+          for f in $(find . -type f -name "*.sh"); do
+            bash -n "$f"
+          done

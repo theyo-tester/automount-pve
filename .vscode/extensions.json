@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "timonwong.shellcheck",
+        "mads-hartmann.bash-ide-vscode",
+        "foxundermoon.shell-format",
+        "editorconfig.editorconfig",
+        "davidanson.vscode-markdownlint",
+        "redhat.vscode-yaml",
+        "github.vscode-github-actions"
+    ]
+}
